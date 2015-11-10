@@ -1,0 +1,18 @@
+<a href="/dashboard"><button type="button" name="home_button">Home</button></a>
+<a href="/questions/new"><button type="button" name="sell_button">Ask Something!</button></a>
+<a href="/logout"><button type="button" name="logout_button">Logout</button></a>
+
+<h3>Here are all the answers for this question!</h3>
+​
+
+<% @answer.each_with_index do |a, index| %>
+  <a href="/answers/<%= a.id %>">
+    <p><%= "#{index + 1})  #{a.body}" %></p>
+  </a>
+
+	<% @question = Question.find_by(id: a.question_id) %>
+	<%if !@question.nil? %>
+		<p>&nbsp &nbsp <a href="/questions/<%=@question.id%>">
+			Question: <%= @question.body %></a></p>
+	<% end %>
+<% end %>	

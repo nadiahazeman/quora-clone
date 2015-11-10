@@ -1,0 +1,12 @@
+<a href="/dashboard"><button type="button" name="home_button">Home</button></a>
+<a href="/questions/new"><button type="button" name="sell_button">Ask Something!</button></a>
+<a href="/logout"><button type="button" name="logout_button">Logout</button></a>
+
+<h3>Here are all of your questions</h3>
+​
+
+<% @question.each_with_index do |q, index| %>
+  <a href="/questions/<%= q.id %>">
+    <p><%= "#{index + 1})  #{q.body}" %></p>
+  </a>
+<% end %>

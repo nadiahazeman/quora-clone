@@ -1,0 +1,20 @@
+<a href="/dashboard"><button type="button" name="home_button">Home</button></a>
+<a href="/questions/new"><button type="button" name="sell_button">Ask Something!</button></a>
+<a href="/logout"><button type="button" name="logout_button">Logout</button></a>
+
+<h3><%= @answer.body %></h3>
+<a href="/answers/<%= @answer.id %>/edit">Edit</a>
+<form action="/answers/<%= @answer.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>
+
+<form action="/answers/new" method="GET">
+<input type="hidden" name="_method" value="create">
+  <input type="submit" value="Ask Again!">
+</form> 
+
+<form action="/answers/new" method="GET">
+<input type="hidden" name="_method" value="create">
+  <input type="submit" value="Answer!">
+</form>  

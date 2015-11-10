@@ -1,0 +1,15 @@
+<a href="/dashboard"><button type="button" name="home_button">Home</button></a>
+<a href="/questions/new"><button type="button" name="sell_button">Ask Something!</button></a>
+<a href="/logout"><button type="button" name="logout_button">Logout</button></a>
+
+<h1>Profile Page</h1>
+<h2><%= " Hello #{@user.fullname} !" %></h2>
+<h3>Contribute to the discussion, go ahead and ask or answer the questions we have for you!</h3>
+
+<a href="http://localhost:9393/questions/new">Ask a Question!</a>
+
+<h2>Latest Questions!</h2>
+<% @questions.each_with_index do |q, index| %>
+<a href="/questions/<%=q.id%>">
+	<p><%="#{index + 1}. #{q.body}"%><%=" asked by: " "#{@user.fullname}"%></p></a>
+<% end %>

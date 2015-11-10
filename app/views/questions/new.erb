@@ -1,0 +1,13 @@
+<a href="/dashboard"><button type="button" name="home_button">Home</button></a>
+<a href="/questions/new"><button type="button" name="sell_button">Ask Something!</button></a>
+<a href="/logout"><button type="button" name="logout_button">Logout</button></a>
+
+<h1>Did you want to ask something?</h1>
+
+<form action="/questions" method="POST">
+	<textarea name="question[body]" rows ="5" cols="30"></textarea>
+	<input type="submit" value="Ask!">
+</form>
+
+
+<a href="/questions/list">See My Questions</a>
